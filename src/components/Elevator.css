@@ -33,13 +33,15 @@
 
 .door.left {
     left: 0;
+    border-right: 1px solid #000;
 }
 
 .door.right {
     right: 0;
+    border-left: 1px solid #000;
 }
 
-.door.opened {
+.door.closed {
     width: 50%;
     transition: 1000ms;
 }

@@ -2,29 +2,28 @@ import { FC, useState, useEffect } from "react";
 
 import './Elevator.css'
 
-const Elevator: FC<{ floor: number, left: string}> = ({floor, left}) => {
-  const [isDoorOpen, setIsDoorOpen] = useState<boolean>(true);
+const Elevator: FC<{ floor: number, leftIndent: string}> = ({floor, leftIndent}) => {
+  const [isDoorClosed, setIsClosed] = useState<boolean>(false);
   const [currentFloor, setCurrentFloor] = useState<number>(floor);
 
   useEffect(() => {
-        setIsDoorOpen(true);
+      setIsClosed(true);
       const timeout = setTimeout(() => {
         setCurrentFloor(floor);
-        // clearTimeout(timeout);
       }, 1000);
       const doorTimeout = setTimeout(() => {
-        setIsDoorOpen(false);
+        setIsClosed(false);
       }, 2700);
       return () => {
         clearTimeout(timeout);
         clearTimeout(doorTimeout);
       };
   }, [floor]);
-  
+
   return(
-    <div className={`Elevator floor-${currentFloor}`} style={{left:left}}>
-      <div className={`door left ${isDoorOpen ? "opened" : ""}`} />
-      <div className={`door right ${isDoorOpen ? "opened" : ""}`} />
+    <div className={`Elevator floor-${currentFloor}`} style={{left:leftIndent}}>
+      <div className={`door left ${isDoorClosed ? "closed" : "opened"}`} />
+      <div className={`door right ${isDoorClosed ? "closed" : "opened"}`} />
     </div>
   );
 };

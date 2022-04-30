@@ -29,8 +29,8 @@ const App = () => {
        <div className="floor floor-1">
          <button onClick={() => CalculateNearestElevator(1)} />
        </div>
-      <Elevator floor={floorElevatorFirst} left="20%"/>
-      <Elevator floor={floorElevatorSecond} left="60%"/>
+      <Elevator floor={floorElevatorFirst} leftIndent="20%"/>
+      <Elevator floor={floorElevatorSecond} leftIndent="60%"/>
     </div>
   );
 }

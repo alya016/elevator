@@ -10,7 +10,7 @@
   position: absolute;
   left: 0;
   width: 100%;
-  height: 4px;
+  height: 2px;
   background: #000;
 }
 
@@ -30,8 +30,8 @@
 .floor button {
   outline: none;
   border: none;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   background: rgb(92, 92, 204);
   box-shadow: 3px 3px 3px rgb(114, 114, 114);
