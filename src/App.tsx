@@ -6,7 +6,7 @@ import Elevator from './components/Elevator'
 const App = () => {
   const [floorElevatorFirst, setFloorElevatorFirst] = useState<number>(1);
   const [floorElevatorSecond, setFloorElevatorSecond] = useState<number>(2);
-  
+
   const CalculateNearestElevator = (clickedFloor: number) => {
     if(Math.abs(clickedFloor - floorElevatorFirst) < Math.abs(clickedFloor - floorElevatorSecond)){
       setFloorElevatorFirst(clickedFloor);
@@ -20,24 +20,20 @@ const App = () => {
   }
   return (
     <div className="main">
-      <div className="floor floor-3">
-        <button onClick={() => CalculateNearestElevator(3)} />
-      </div>
-      <div className="floor floor-2">
-        <button onClick={() => CalculateNearestElevator(2)} />
-      </div>
-      <div className="floor floor-1">
-        <button onClick={() => CalculateNearestElevator(1)} />
-      </div>
-      <Elevator 
-        floorForFirst={floorElevatorFirst} 
-        floorForSecond={floorElevatorSecond}
-      />
+       <div className="floor floor-3">
+         <button onClick={() => CalculateNearestElevator(3)} />
+       </div>
+       <div className="floor floor-2">
+         <button onClick={() => CalculateNearestElevator(2)} />
+       </div>
+       <div className="floor floor-1">
+         <button onClick={() => CalculateNearestElevator(1)} />
+       </div>
+      <Elevator floor={floorElevatorFirst} left="20%"/>
+      <Elevator floor={floorElevatorSecond} left="60%"/>
     </div>
   );
 }
 
 export default App;
-
-
 
