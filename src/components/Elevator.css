@@ -4,10 +4,21 @@
     background: rgb(239, 255, 218);
     border: 1px solid #000;
     position: absolute;
-    transition: 3000ms;
+    transition: 2000ms;
     transition-property: bottom;
     z-index: 2;
-    left: 50%;
+    left: 30%;
+}
+.Elevator2 {
+    width: 200px;
+    height: 200px;
+    background: rgb(239, 255, 218);
+    border: 1px solid #000;
+    position: absolute;
+    transition: 2000ms;
+    transition-property: bottom;
+    z-index: 2;
+    left: 60%;
 }
 /* @keyframes slide {
     0% {
@@ -18,21 +29,36 @@
     }
 } */
 .Elevator.floor-1 {
-    /* bottom: 10%; */
-    animation: slide 1s ease-in forwards;
+    bottom: 10%;
+    /* animation: slide 1s ease-in forwards; */
 
 }
 
 .Elevator.floor-2 {
-    /* bottom: 40%; */
-    animation: slide 1s ease-in forwards;
+    bottom: 40%;
+    /* animation: slide 1s ease-in forwards; */
 
 }
 
 .Elevator.floor-3 {
-    /* bottom: 70%; */
-    animation: slide 1s ease-in forwards;
+    bottom: 70%;
+    /* animation: slide 1s ease-in forwards; */
+}
+.Elevator2.floor-1 {
+    bottom: 10%;
+    /* animation: slide 1s ease-in forwards; */
 
+}
+
+.Elevator2.floor-2 {
+    bottom: 40%;
+    /* animation: slide 1s ease-in forwards; */
+
+}
+
+.Elevator2.floor-3 {
+    bottom: 70%;
+    /* animation: slide 1s ease-in forwards; */
 }
 .door {
     width: 0;
