@@ -4,8 +4,7 @@
     background: rgb(239, 255, 218);
     border: 1px solid #000;
     position: absolute;
-    transition: 2500ms;
-    /* animation: slide 1s ease-in forwards; */
+    transition: 3000ms;
     transition-property: bottom;
     z-index: 2;
     left: 50%;

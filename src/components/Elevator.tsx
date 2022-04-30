@@ -3,26 +3,22 @@ import { FC, useState, useEffect } from "react";
 import './Elevator.css'
 
 const Elevator: FC<{ floor: number }> = ({floor}) => {
-  const [isDoorOpen, setIsDoorOpen] = useState<boolean>(false);
+  const [isDoorOpen, setIsDoorOpen] = useState<boolean>(true);
   const [currentFloor, setCurrentFloor] = useState<number>(floor);
 
-  // useEffect(() => {
-  //   setCurrentFloor(floor)
-  //   setIsDoorOpen(true);
-  //   const timeout = setTimeout(() => {
-  //     setIsDoorOpen(false);
-  //     clearTimeout(timeout);
-  //   }, 500);
   useEffect(() => {
     setIsDoorOpen(true);
-
     const timeout = setTimeout(() => {
-      setIsDoorOpen(false);
-      clearTimeout(timeout);
       setCurrentFloor(floor);
-    }, 1500);
+      clearTimeout(timeout);
+    }, 1000);
   }, [floor]);
-
+    useEffect(() => {
+      const timeout = setTimeout(() => {
+        setIsDoorOpen(false);
+        clearTimeout(timeout);
+      }, 3500);
+    }, [isDoorOpen]);
   return(
     <div className={`Elevator floor-${currentFloor}`}>
       <div className={`door left ${isDoorOpen ? "opened" : ""}`} />
