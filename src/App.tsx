@@ -8,9 +8,11 @@ const App = () => {
   const [floorElevatorSecond, setFloorElevatorSecond] = useState<number>(2);
 
   const CalculateNearestElevator = (clickedFloor: number) => {
-    if(Math.abs(clickedFloor - floorElevatorFirst) < Math.abs(clickedFloor - floorElevatorSecond)){
+    const distanceToFirst = Math.abs(clickedFloor - floorElevatorFirst);
+    const distanceToSecond = Math.abs(clickedFloor - floorElevatorSecond);
+    if(distanceToFirst < distanceToSecond){
       setFloorElevatorFirst(clickedFloor);
-    }else if(Math.abs(clickedFloor - floorElevatorFirst) === Math.abs(clickedFloor - floorElevatorSecond)){
+    }else if(distanceToFirst === distanceToSecond){
       setFloorElevatorFirst(clickedFloor);
       setFloorElevatorSecond(clickedFloor);
     }
